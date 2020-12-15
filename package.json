@@ -1,5 +1,5 @@
 {
-  "name": "base32-codec",
+  "name": "base32-codecs",
   "version": "1.0.0",
   "description": "'codecs' compatible base32-encode and base32-decode adapter.",
   "main": "index.js",
