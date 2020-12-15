@@ -1,20 +1,19 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import { test } from 'zora'
-import codecs from '.'
+import codecs, { Base32Codec, Base32cCodec, Base32cpCodec, Base32hCodec, Base32hpCodec, Base32pCodec } from '.'
 import { randomBytes } from 'crypto'
 
-const names = ['base32', 'base32c', 'base32cp', 'base32h', 'base32hp', 'base32p']
+const testCodecs: [Base32Codec, Base32cCodec, Base32cpCodec, Base32hCodec, Base32hpCodec, Base32pCodec] =
+  [codecs.base32, codecs.base32c, codecs.base32cp, codecs.base32h, codecs.base32hp, codecs.base32p]
 
-type Name = 'base32' | 'base32c' | 'base32cp' | 'base32h' | 'base32hp' | 'base32p'
-
-for (const name of names) {
-  test(name, t => {
-    const codec = codecs[name as Name]
+for (const codec of testCodecs) {
+  test(codec.name, t => {
     t.notEq(codec, undefined)
-    t.equals(codec.name, name)
+    t.equals(typeof codec.name, 'string', 'name exists')
+    t.equals(codec, codecs[codec.name], 'name matches key')
     const input = randomBytes(10)
     const any = codec.decode(input)
     t.equals(typeof any, 'string', 'returns a string')
-    t.deepEqual(codec.encode(any), input)
+    t.deepEqual(codec.encode(any), input, 'output matches input')
   })
 }
