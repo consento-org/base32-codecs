@@ -29,10 +29,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/consento-org/base32-codec.git"
+    "url": "git+https://github.com/consento-org/base32-codecs.git"
   },
   "bugs": {
-    "url": "https://github.com/consento-org/base32-codec/issues"
+    "url": "https://github.com/consento-org/base32-codecs/issues"
   },
-  "homepage": "https://github.com/consento-org/base32-codec#readme"
+  "homepage": "https://github.com/consento-org/base32-codecs#readme"
 }

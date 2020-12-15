@@ -1,6 +1,6 @@
-# base32-codec
+# base32-codecs
 
-`base32-codec` is a [codecs][codecs] compatible adapter to [base32-encode][encode] and [base32-decode][decode].
+`base32-codecs` is a [codecs][codecs] compatible adapter to [base32-encode][encode] and [base32-decode][decode].
 
 [codecs]: (https://github.com/mafintosh/codecs)
 [encode]: https://github.com/LinusU/base32-encode
@@ -16,7 +16,7 @@ const {
   base32h, // RFC4648-HEX, unpadded
   base32hp, // RFC4648-HEX, padded
   base32p // RFC4648, Padded 
-} = require('base32-codec')
+} = require('base32-codecs')
 
 for (const codec of [base32, base32c, base32cp, base32h, base32hp, base32p]) {
   codec.encode(
