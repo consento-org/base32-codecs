@@ -8,8 +8,8 @@ module.exports = [
   ['base32h', 'RFC4648-HEX', false],
   ['base32hp', 'RFC4648-HEX', true],
   ['base32p', 'RFC4648', true]
-].map(([name, variant, padded]) => {
-  const options = { padded }
+].map(([name, variant, padding]) => {
+  const options = { padding }
   return {
     name,
     encode: function (val) {
