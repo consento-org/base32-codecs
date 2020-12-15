@@ -11,14 +11,13 @@
 ```javascript
 const {
   base32, // RFC4648, unpadded
-  base32c, // Crockford, unpadded
-  base32cp, // Crockford, padded
+  base32c, // Crockford
   base32h, // RFC4648-HEX, unpadded
   base32hp, // RFC4648-HEX, padded
   base32p // RFC4648, Padded 
 } = require('base32-codecs')
 
-for (const codec of [base32, base32c, base32cp, base32h, base32hp, base32p]) {
+for (const codec of [base32, base32c, base32h, base32hp, base32p]) {
   codec.encode(
     codec.decode(crypto.randomBytes(10))
   )

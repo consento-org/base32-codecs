@@ -4,7 +4,6 @@ const encode = require('base32-encode')
 module.exports = [
   ['base32', 'RFC4648', false],
   ['base32c', 'Crockford', false],
-  ['base32cp', 'Crockford', true],
   ['base32h', 'RFC4648-HEX', false],
   ['base32hp', 'RFC4648-HEX', true],
   ['base32p', 'RFC4648', true]
